@@ -20,3 +20,33 @@ while n < g:
         sum += n
 
 print sum
+
+"""
+After looking into primes and trying to optimize it, found the concept of 
+prime number sieves. Basically, we start with a list of all true values. 
+This like represents the prime status of it's index. We start looping through 
+and check if the flag is True for that number. If so, that means this number is 
+the next prime, and then we turn off all the multiples of that number. Very 
+efficient, and dropped the computations from ~14s to ~1 sec
+"""
+import math
+
+g = 2000000  # goal
+sieve = [True] * g
+sieve[0] = False
+sieve[1] = False
+
+for n in xrange(2, g):
+    if not sieve[n]:
+        continue
+    else:
+        for x in xrange(n+n, g, n):
+            sieve[x] = False
+
+sum = 0
+for i, x in enumerate(sieve):
+    if x:
+        sum += i
+
+print sum
+
