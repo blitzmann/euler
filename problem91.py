@@ -1,13 +1,18 @@
-# Problem 91
-# Could have done this a lot smarter probably and saved some cycles, but whatev.
-# pythagorean function takes 3 point, 2 of which are generated. Some points don't make sense since they are
-# identical, so we check for those. We also get a lot of duplicate combinations, such as (4,5)(3,2) and
-# (3,2)(4,5). To check for this, we simply compare the two points thanks to pythons tuples.
-# The rest of it is straight forward.
+"""
+https://projecteuler.net/problem=91
 
+I could haveprobably done this a lot smarter and saved some cycles, but whatever.
+pythagorean function takes 3 point, 2 of which are generated. Some points don't
+make sense since they are identical, so we check for those. We also get a lot of 
+duplicate combinations, such as (4,5)(3,2) and (3,2)(4,5). To check for this, 
+we simply compare the two points thanks to pythons tuples comparisons. The rest 
+is simply a loop to generate the required point data to test.
+"""
 n = 50
 
 def pythagorean(p1, p2, p3):
+    """Returns True if 3 points form right triangle"""
+    # remove duplicate points
     if p1 == p2 or p2 == p3 or p3== p1 or p3 > p2:
         return False
 
