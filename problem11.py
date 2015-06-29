@@ -1,12 +1,20 @@
-'''
-for this, we will be walking the list. The following facts are present:
-- To calculate the four above, it will be the product of the indicies i, i-(width), i-(width*2), i-(width*3)
-- For diagonal, it will be the product of indicies i, i-(width+1), i-(width*2+2),i-(width*3+3). Flip the signs for the other direction
+"""
+https://projecteuler.net/problem=11
+
+For this, we will simply be walking the list. As we walk the list, we will check
+the four adjacent numbers going up, left, up-left, and up-right. There is no
+need to check right and down, as they will eventually be included in the checks
+once we get there.The following facts are present:
+
+- To calculate the four above, it will be the product of the indicies i,
+    i-(width), i-(width*2), i-(width*3)
+- For diagonal, it will be the product of indicies i, i-(width+-1),
+    i-(width*2+-2),i-(width*3+-3). Signs determine direction
 - For left, it will simply be i and the last 3.
 
-If we run into an index that is negative, do not do that test.
-Similarly, for going left, test if it's outside the bounds.
-'''
+For out of bounds (negative indices or indice that wrap around the width),
+the test should return False
+"""
 
 grid = '''
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
