@@ -2,7 +2,8 @@
 https://projecteuler.net/problem=92
 
 We create a recursive function that computes the square sum and returns true if 
-it's 89. Takes over a minute to compute all < 10,000,000, but it works 
+it's 89. Takes over a minute to compute all < 10,000,000, but it works. Also has 
+a progress indicator every 1,000 integers
 """
 end = 10000000
 n = 0
